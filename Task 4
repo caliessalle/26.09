@@ -1,0 +1,31 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main() {
+    srand(static_cast<int>(time(0)));
+    
+    const int SIZE = 10;
+    int arr[SIZE];
+
+    cout << "Масив: ";
+    for (int i = 0; i < SIZE; i++) {
+        arr[i] = rand() % 100;
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+
+    int minNum = arr[0];
+    int maxNum = arr[0];
+
+    for (int i = 1; i < SIZE; i++) {
+        if (arr[i] < minNum) minNum = arr[i];
+        if (arr[i] > maxNum) maxNum = arr[i];
+    }
+
+    cout << "Мiнiмальний елемент: " << minNum << endl;
+    cout << "Максимальний елемент: " << maxNum << endl;
+
+    return 0;
+}
