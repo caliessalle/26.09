@@ -13,5 +13,5 @@ int main()
         cout << "У " << year << " році 365 днів" << endl;
     }
 
-    return 0;
+    return 0; 
 }
