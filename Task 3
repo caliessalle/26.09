@@ -1,0 +1,49 @@
+#include <iostream>
+using namespace std;
+
+const char* colors[] = {
+    "\033[31m",
+    "\033[32m",
+    "\033[33m",
+    "\033[34m",
+    "\033[35m",
+    "\033[36m",
+    "\033[37m"
+};
+
+void drawRectangle() {
+    int width, height, color;
+    char symbol;
+
+    cout << "Введiть ширину прямокутника: ";
+    cin >> width;
+    cout << "Введiть висоту прямокутника: ";
+    cin >> height;
+    cout << "Введiть символ для малювання: ";
+    cin >> symbol;
+
+    cout << "Введiть колiр (1-7): ";
+    cin >> color;
+
+    if (color < 1 || color > 7) {
+        cout << "Невiдомий колiр, буде використано білий.\n";
+        color = 7;
+    }
+
+    const char* colorCode = colors[color];
+
+    for (int i = 0; i < height; i++) {
+        for (int j = 0; j < width; j++) {
+            if (i == 0 || i == height - 1 || j == 0 || j == width-1)
+                cout << colorCode << symbol << "\033[0m";
+            else
+                cout << " ";
+        }
+        cout << endl;
+    }
+}
+
+int main() {
+    drawRectangle();
+    return 0;
+}
