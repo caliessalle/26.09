@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-
+ 
 int main() {
     const char* font_colors[] = {
         "\033[30m",
