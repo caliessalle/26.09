@@ -1,1 +1,17 @@
-dfkaksdkfa
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int year;
+    cout << "Введіть рік: ";
+    cin >> year;
+
+    if ((year % 400 == 0) || (year % 4 == 0 && year % 100 != 0)) {
+        cout << "У " << year << " році 366 днів" << endl;
+    } else {
+        cout << "У " << year << " році 365 днів" << endl;
+    }
+
+    return 0;
+}
